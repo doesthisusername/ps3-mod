@@ -1,0 +1,5 @@
+ld.lld
+**/loader.bin
+**/bin/
+**/obj/
+**/EBOOT.*
