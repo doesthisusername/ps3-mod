@@ -102,15 +102,15 @@ void multi_update() {
     }
 
     if(!partner_moby) {
-        partner_moby = spawn_moby(0); // player
+        partner_moby = spawn_moby(500); // crate
     }
     if(partner_moby) {
         // skip pointers
         memcpy(partner_moby, &partner_data.player, 0x20);
         memcpy(&partner_moby->rot, &partner_data.player.rot, sizeof(struct vec4));
-        memcpy(&partner_moby->scale, &partner_data.player.scale, 0x3C);
-        memcpy((char*)partner_moby + 0x70, (char*)&partner_data.player + 0x70, 0x08);
-        memcpy((char*)partner_moby + 0x7C, (char*)&partner_data.player + 0x7C, 0x84);
+        //memcpy(&partner_moby->scale, &partner_data.player.scale, 0x3C);
+        //memcpy((char*)partner_moby + 0x70, (char*)&partner_data.player + 0x70, 0x08);
+        //memcpy((char*)partner_moby + 0x7C, (char*)&partner_data.player + 0x7C, 0x84);
 
         *(unsigned*)((char*)partner_moby + 0x74) = 0; // disable tick
         partner_moby->render_distance = 0x7FFF;
